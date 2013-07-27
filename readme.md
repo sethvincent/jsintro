@@ -8,13 +8,17 @@ Make sure you have a GitHub account, and log in.
 [Create an account if you haven't yet.](http://github.com/signup/free)
 
 ### Open the javascript console
-Chrome:
+*Chrome:*
+
 Windows: CTRL-SHIFT-J
+
 Mac: COMMAND-OPTION-J
 
-Firefox: CONTROL-SHIFT-K
-Windows: COMMAND-OPTION-K
-Mac:
+*Firefox:*
+
+Windows: CONTROL-SHIFT-K
+
+Mac: COMMAND-OPTION-K
 
 We can type javascript into the console. This is also where messages are displayed when we use `console.log()`.
 
@@ -286,107 +290,107 @@ Basics of using git:
 
 Create a git repository:
 
-~~~~~~~~
+```
 cd name-of-folder
 git init
-~~~~~~~~
+```
 
 Add files:
 
-~~~~~~~~
+```
 git add name-of-file
 
 // or add all files in directory:
 
 git add .
-~~~~~~~~
+```
 
 When you add files to a git repository they are "staged" and ready to be committed.
 
 Remove files:
-~~~~~~~~
+```
 git rm name-of-file
 
 // force removal of files:
 
 git rm -rf name-of-file-or-directory
-~~~~~~~~
+```
 
 Commit files and add a message using the `-m` option:
 
-~~~~~~~~
+```
 git commit -m 'a message describing the commit'
-~~~~~~~~
+```
 
 Create a branch:
 
-~~~~~~~~
+```
 git branch name-of-branch
-~~~~~~~~
+```
 
 Checkout a branch:
 
-~~~~~~~~
+```
 git checkout name-of-branch
-~~~~~~~~
+```
 
 Shortcut for creating a new branch and checking it out:
 
-~~~~~~~~
+```
 git checkout -b name-of-branch
-~~~~~~~~
+```
 
 Merge a branch into the master branch:
 
-~~~~~~~~
+```
 git checkout master
 git merge name-of-branch
-~~~~~~~~
+```
 
 Add a remote repository:
 
-~~~~~~~~
+```
 git remote add origin git@github.com:yourname/projectname.git
-~~~~~~~~
+```
 
 List associated repositories:
 
-~~~~~~~~
+```
 git remote -v
-~~~~~~~~
+```
 
 Pull changes from a remote repository:
 
-~~~~~~~~
+```
 git pull origin master
-~~~~~~~~
+```
 
 Push changes to a remote repository
 
-~~~~~~~~
+```
 git push origin master
-~~~~~~~~
+```
 
 Checkout a remote branch:
 
-~~~~~~~~
+```
 git checkout -t origin/haml
-~~~~~~~~
+```
 
 ## Getting started with `npm`
 If you've alreadt installed node.js, you've got npm.
 
 Check the version of `npm` like this:
 
-~~~~~~~~
+```
 npm -v
-~~~~~~~~
+```
 
 This should return something like:
 
-~~~~~~~~
+```
 1.2.32
-~~~~~~~~
+```
 
 The exact version numbers might differ, and that's ok.
 
@@ -394,82 +398,82 @@ Installing a module will automatically place the module in a folder named `node_
 
 Make a new folder:
 
-~~~~~~~~
+```
 mkdir npm-experiments
 cd npm-experiments
-~~~~~~~~
+```
 
 Install browserify:
 
-~~~~~~~~
+```
 npm install browserify
-~~~~~~~~
+```
 
 Now, if you look in the node_modules directory, you'll see browserify!
 
 You can also install modules globally, typically so that you can run their commands at any time in any directory. This is useful with a module like browserify, so let's try it out:
 
-~~~~~~~~
+```
 npm install -g browserify
-~~~~~~~~
+```
 
 It's the `-g` option that install the module globally.
 
 You can delete the node_modules directory:
 
-~~~~~~~~
+```
 rm -rf node_modules
-~~~~~~~~
+```
 
 And run the browserify command:
 
-~~~~~~~~
+```
 browserify
-~~~~~~~~
+```
 
 Without any options it'll only return help text. For more about browserify, check out the Introduction to browserify section.
 
 To learn more about `npm` run the command without any options:
 
-~~~~~~~~
+```
 npm
-~~~~~~~~
+```
 
 This gives you a full list of the commands and options available through `npm`. To learn about any particular command you can run:
 
-~~~~~~~~
+```
 npm help name-of-command
-~~~~~~~~
+```
 
 ## Creating a module
 Any time you're using javascript modules from `npm` in a project you should create a package.json file. In this file you can save the dependencies for your project, along with license, author, repo inforamtion, and other details.
 
 You can use the `npm init` command to generate a package.json file:
 
-~~~~~~~~
+```
 npm init
-~~~~~~~~
+```
 
 Answer the questions.
 
 When you're done, you'll have a package.json file. You can install modules and save them as dependencies of your project like this:
 
-~~~~~~~~
+```
 npm install request --save
-~~~~~~~~
+```
 
 And if you are installing a module (like a test framework) as a development dependency, you can do so like this:
 
-~~~~~~~~
+```
 npm install tap --save-dev
-~~~~~~~~
+```
 
 ## Publishing modules
 Once you've written a module, you can publish it to `npm` super easy:
 
-~~~~~~~~
+```
 npm publish .
-~~~~~~~~
+```
 
 Before running the `npm publish` command you'll want to edit your package.json file to make sure that properties like version, author, homepage, and repository are all filled in. You should also first create a useful readme.md file, as that is displayed on a modules project page on [npmjs.org](http://npmjs.org).
 
@@ -478,9 +482,9 @@ You can check out [npmjs.org](http://npmjs.org) as well as [npmsearch.com](http:
 
 You can also run the `search` command in the terminal:
 
-~~~~~~~~
+```
 npm search template
-~~~~~~~~
+```
 
 This will return a bunch of modules related to templates!
 
