@@ -36,9 +36,14 @@ Once you're logged in to GitHub, open [requirebin.com](http://requirebin.com) in
 
 
 ```
-// Here we select the canvas with an id of game 
+// Here we create the canvas with an id of game 
 // this is where we will draw our game assets
-var canvas = document.querySelector('#game');
+var canvas = document.createElement('canvas');
+canvas.id = 'game';
+
+// this adds the canvas element to the page
+var body = document.getElementsByTagName('body')[0];
+body.appendChild(canvas);
 
 // What kind of drawing will we do?
 // our game is in 2d, so our drawing will happen in the _context_ of 2 dimensions
@@ -46,8 +51,8 @@ var context = canvas.getContext('2d');
 
 function startGame(){ 
   // set the width and height of our drawing canvas
-  canvas.height = 400;
-  canvas.width = 800;
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
 
   // start the game loop
   loop();
@@ -79,7 +84,7 @@ var box = {
 
 // this function manages all the user input for the box object
 box.input = function(){
-  
+
   // check if any of the arrow keys are in the keysDown object
   if (40 in keysDown) {
     box.y += box.speed;
@@ -93,7 +98,7 @@ box.input = function(){
   if (39 in keysDown) {
     box.x += box.speed;
   }
-  
+
   // check if box hits left edge
   if (box.x <= 0) {
     box.x = 0;
